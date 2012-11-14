@@ -6,6 +6,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipelineStyleUsage", "PipelineStyleUsage\PipelineStyleUsage.csproj", "{CAC42845-D46C-4C62-803D-1373CA1611AB}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs16
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PipelineStyle\\PipelineStyle.csproj
+		SccProjectName1 = PipelineStyle
+		SccLocalPath1 = PipelineStyle
+		SccProjectUniqueName2 = PipelineStyleUsage\\PipelineStyleUsage.csproj
+		SccProjectName2 = PipelineStyleUsage
+		SccLocalPath2 = PipelineStyleUsage
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
