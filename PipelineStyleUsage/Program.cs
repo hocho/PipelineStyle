@@ -29,9 +29,7 @@ namespace CodeSuperior.PipelineStyle.Tutorial
 		{
 			var person = 
 				Person.GetPeople()
-				.Where(
-					p => p.Name == name)
-				.FirstOrDefault();
+				.FirstOrDefault(p => p.Name == name);
 
 			if(person == null)												
 			{
@@ -64,9 +62,7 @@ namespace CodeSuperior.PipelineStyle.Tutorial
 		{
 			return 
 				Person.GetPeople()
-				.Where(
-					p => p.Name == name)
-				.FirstOrDefault()										// return person, if found
+				.FirstOrDefault(p => p.Name == name)					// return person, if found
 				.DoIsNull(
 					() =>												// if person not found
 						String.Format(									
