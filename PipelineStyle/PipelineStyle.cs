@@ -2,13 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-
-// One of the following two using statements assignments needs to be commented depending on usage.
-// If you do not want to step into the pipeline glue code, use 'DebuggerNonUserCodeAttribute' line.
-// else use the 'DummyAttribute' line.
-using StepThrough = 
-	//CodeSuperior.PipelineStyle.DummyAttribute;
-	System.Diagnostics.DebuggerNonUserCodeAttribute;
+using System.Diagnostics;
 
 namespace CodeSuperior.PipelineStyle
 {
@@ -38,6 +32,7 @@ namespace CodeSuperior.PipelineStyle
 	/// although it can be used for both reference, value and primitive types.
 	/// 
 	/// </summary>
+	[DebuggerNonUserCode]		// Comment out this line if you want to step into the pipeline code
 	static 
 	public 
 	class FunUtil
@@ -67,7 +62,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="obj">The object made fluent using PipelineStyle.</param>
 		/// <param name="action">Action to invoke.</param>
 		/// <returns>The object passed in.</returns>
-		[StepThrough]
 		public 
 		static
 		T
@@ -90,7 +84,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="isTrue">Boolean value to determine if the action should be invoked.</param>
 		/// <param name="action">Action to invoke.</param>
 		/// <returns>The object passed in.</returns>
-		[StepThrough]
 		public 
 		static
 		T
@@ -112,7 +105,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="isTrue">Predicate to which the object is passed to determine if the action should be invoked.</param>
 		/// <param name="action">Action to invoke.</param>
 		/// <returns>The object passed in.</returns>
-		[StepThrough]
 		public 
 		static
 		T
@@ -127,7 +119,6 @@ namespace CodeSuperior.PipelineStyle
 			return obj;
 		}
 
-		[StepThrough]
 		public 
 		static
 		T
@@ -154,7 +145,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="obj">The object made fluent using PipelineStyle.</param>
 		/// <param name="onNotNull">Action to invoke.</param>
 		/// <returns>The object passed in.</returns>
-		[StepThrough]
 		public 
 		static 
 		T
@@ -176,7 +166,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="obj">The object made fluent using PipelineStyle.</param>
 		/// <param name="onNull">Action to invoke.</param>
 		/// <returns>The object passed in.</returns>
-		[StepThrough]
 		public 
 		static 
 		T
@@ -201,7 +190,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="obj">The object made fluent using PipelineStyle.</param>
 		/// <param name="onNotDefault">Action to invoke.</param>
 		/// <returns>The object passed in.</returns>
-		[StepThrough]
 		public 
 		static 
 		T
@@ -221,7 +209,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="obj">The object made fluent using PipelineStyle.</param>
 		/// <param name="onNull">Action to invoke.</param>
 		/// <returns>The object passed in.</returns>
-		[StepThrough]
 		public 
 		static 
 		T
@@ -244,7 +231,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="isTrue">The Boolean object made fluent using PipelineStyle.</param>
 		/// <param name="onTrue">Action to invoke.</param>
 		/// <returns>The Boolean object passed in.</returns>
-		[StepThrough]
 		public 
 		static 
 		bool
@@ -265,7 +251,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="onTrue">Action to invoke.</param>
 		/// <param name="onElse">Else action to invoke.</param>
 		/// <returns>The Boolean object passed in.</returns>
-		[StepThrough]
 		public 
 		static 
 		bool
@@ -296,7 +281,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="obj">The object made fluent using PipelineStyle.</param>
 		/// <param name="func">Function to invoke.</param>
 		/// <returns>The result of the function called.</returns>
-		[StepThrough]
 		public 
 		static
 		TOut
@@ -317,7 +301,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="isTrue">Boolean value to determine if the action should be invoked.</param>
 		/// <param name="onTrue">Function to invoke.</param>
 		/// <returns>The result of the function if called, or the corresponding default value.</returns>
-		[StepThrough]
 		public 
 		static
 		TOut
@@ -338,7 +321,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="isTrue">Predicate to which the object is passed to determine if the function should be invoked.</param>
 		/// <param name="onTrue">Function to invoke.</param>
 		/// <returns>The result of the function if called, or the corresponding default value.</returns>
-		[StepThrough]
 		public 
 		static
 		TOut
@@ -360,7 +342,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="onTrue">Function to invoke if the predicate return true.</param>
 		/// <param name="onFalse">Function to invoke if the predicate returns false.</param>
 		/// <returns>The result of the function called.</returns>
-		[StepThrough]
 		public 
 		static
 		TOut
@@ -383,7 +364,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="onTrue">Function to invoke if true.</param>
 		/// <param name="onFalse">Function to invoke if false.</param>
 		/// <returns>The result of whichever function was called.</returns>
-		[StepThrough]
 		public 
 		static
 		TOut
@@ -406,7 +386,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="onTrue">Function to invoke.</param>
 		/// <param name="falseValue">Value to return if the predicate returns false.</param>
 		/// <returns>The result of the function called or the falseValue.</returns>
-		[StepThrough]
 		public 
 		static
 		TOut
@@ -430,7 +409,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="onTrue">Function to invoke.</param>
 		/// <param name="falseValue">Value to return if the predicate returns false.</param>
 		/// <returns>The result of the function called or the falseValue.</returns>
-		[StepThrough]
 		public 
 		static
 		TOut
@@ -453,7 +431,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="onTrue">Function to invoke if the Boolean value is true.</param>
 		/// <param name="onFalse">Function to invoke if Boolean value is false.</param>
 		/// <returns>The result of the function called.</returns>
-		[StepThrough]
 		public 
 		static
 		TOut
@@ -477,7 +454,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="obj">The object made fluent using PipelineStyle.</param>
 		/// <param name="onNotNull">Function to invoke.</param>
 		/// <returns>The result of the function if called, or the corresponding default value.</returns>
-		[StepThrough]
 		public 
 		static 
 		TOut
@@ -499,7 +475,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="onNotNull">Function to invoke if object in not null.</param>
 		/// <param name="onElse">Function to invoke if object is null.</param>
 		/// <returns>The result of the function called.</returns>
-		[StepThrough]
 		public 
 		static 
 		TOut
@@ -522,7 +497,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="onNotNull">Function to invoke.</param>
 		/// <param name="defaultValue">Value to return if object is null.</param>
 		/// <returns>The result of the function if called, or the defaultValue.</returns>
-		[StepThrough]
 		public 
 		static 
 		TOut
@@ -544,7 +518,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="obj">The object made fluent using PipelineStyle.</param>
 		/// <param name="onNull">Function to invoke.</param>
 		/// <returns>The result of the function if called or the object.</returns>
-		[StepThrough]
 		public 
 		static 
 		T
@@ -566,7 +539,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="obj">The object made fluent using PipelineStyle.</param>
 		/// <param name="onNotDefault">Function to invoke.</param>
 		/// <returns>The result of the function if called, or the corresponding default value.</returns>
-		[StepThrough]
 		public 
 		static 
 		TOut
@@ -586,7 +558,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="onNotDefault">Function to invoke.</param>
 		/// <param name="onElse">Function to invoke if object is the default value.</param>
 		/// <returns>The result of the function called.</returns>
-		[StepThrough]
 		public 
 		static 
 		TOut
@@ -607,7 +578,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="obj">The object made fluent using PipelineStyle.</param>
 		/// <param name="onDefault">Function to invoke.</param>
 		/// <returns>The result of the function if called or the object.</returns>
-		[StepThrough]
 		public 
 		static 
 		T
@@ -629,7 +599,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="isTrue">The Boolean object made fluent using PipelineStyle.</param>
 		/// <param name="onTrue">Function to invoke.</param>
 		/// <returns>The result of the function if called, or the corresponding default value.</returns>
-		[StepThrough]
 		public 
 		static 
 		T
@@ -649,7 +618,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="onTrue">Function to invoke if Boolean value is true.</param>
 		/// <param name="onElse">Function to invoke if Boolean value is false.</param>
 		/// <returns>The result of the function called.</returns>
-		[StepThrough]
 		public 
 		static 
 		T
@@ -670,7 +638,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="onTrue">Function to invoke if Boolean value is true.</param>
 		/// <param name="elseValue">Value returned if Boolean value is false.</param>
 		/// <returns>The result of the function if called or the elseValue.</returns>
-		[StepThrough]
 		public 
 		static 
 		T
@@ -694,7 +661,6 @@ namespace CodeSuperior.PipelineStyle
 		/// <param name="obj">The object to be used in the 'using statement'</param>
 		/// <param name="work">The body of the using statement, passed in as a function.</param>
 		/// <returns>Result of the function called.</returns>
-		[StepThrough]
 		public 
 		static 
 		TOut
