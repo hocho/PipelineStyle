@@ -15,7 +15,14 @@ namespace CodeSuperior.PipelineStyle.Tutorial
 			string[]							args) 
 		{
 			var rank1 = ExampleConventional("John");
-			var rank2 = ExamplePipelineStyle("Jane");
+			var rank2 = ExamplePipelineStyle("John");
+
+			var isSame1 = rank1 == rank2;
+
+			var rank3 = ExampleConventional("Jane");
+			var rank4 = ExamplePipelineStyle("Jane");
+			
+			var isSame2 = rank3 == rank4;
 		}
 
 		/// <summary>
@@ -42,7 +49,8 @@ namespace CodeSuperior.PipelineStyle.Tutorial
 				throw new ApplicationException(msg);
 			}
 
-			person.SendEmail();														
+			if (person.Email != null)
+				person.SendEmail();														
 
 			var school = person.GetSchool();
 
@@ -68,15 +76,16 @@ namespace CodeSuperior.PipelineStyle.Tutorial
 						String.Format(									
 									"Person '{0}' not found.",
 									name)
-						.Do(
+						.Do(											// 'Do' pipes the message object
 							Logger.Log)									// log function specified implicitly 
 						.Do(											// and throw the exception
-							msg => { throw new ApplicationException(msg); } )		
+							message => { throw new ApplicationException(message); } )		
 					)													// else returns the person
-				.Do(
-					person => person.SendEmail())						// Do - returns the same object - Person
+				.DoIf(
+					person => person.Email != null,						// If an email exists, send the email
+					person => person.SendEmail())						// 'DoIf' - pipes the same object - Person
 				.To(														
-					person => person.GetSchool())						// To - returns another object - School
+					person => person.GetSchool())						// 'To' - returns another object - School
 				.ToNotNull(
 					SchoolRankingBoard.GetRank,							// Get school rank - specified implicitly
 					-1);												// or return -1, if person has no schooling 
@@ -94,6 +103,9 @@ namespace CodeSuperior.PipelineStyle.Tutorial
 
 			public
 			School								School;
+
+			public 
+			string 								Email;
 
 		public 
 		void
@@ -119,6 +131,7 @@ namespace CodeSuperior.PipelineStyle.Tutorial
 			return new List<Person> {
 						new Person {
 								Name = "John",
+								Email = "John@hotmail.com",
 								School = null, 
 						},
 						new Person {
