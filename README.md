@@ -11,6 +11,7 @@ Some of the benefits of Pipeline Style
 * Builds sort of 'monadic computations'
 Hopefully similar features make it into future versions of C# as first class parts of the language. Pipeline Style can be easily ported to and used in Java.
 
-*Cheat sheet:* Pipeline Style uses extensions methods named with the verbs, 'Do' for Actions & 'To' for Functions. 'Do' extensions return the original parameter. 'To' extensions transform the original parameter to another value/type. 
+**Cheat sheet:** Pipeline Style uses extensions methods named with the verbs, 'Do' for Actions & 'To' for Functions. 'Do' extensions return the original parameter. 'To' extensions transform the original parameter to another value/type. 
 
 See below a small sample of the extension methods and how they replace conventional C# coding.  
+
