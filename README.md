@@ -15,3 +15,6 @@ Hopefully similar features make it into future versions of C# as first class par
 
 See below a small sample of the extension methods and how they replace conventional C# coding.  
 
+![Alt text](Conventional.PNG?raw=true "Conventional")
+
+![Alt text](PipelineStyle.PNG?raw=true "PipelineStyle")
